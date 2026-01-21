@@ -49,54 +49,19 @@ export default function HeroSection() {
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0 animate-grid-move" />
         </div>
-
-        {/* Animated Particles */}
-        {/* {[...Array(20)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute w-1.5 h-1.5 bg-gradient-primary rounded-full animate-particle-drift"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 5}s`,
-              animationDuration: `${4 + Math.random() * 8}s`,
-            }}
-          />
-        ))} */}
       </div>
 
       {/* Main Content Container */}
-      <div className="relative z-10 max-w-7xl mx-auto w-full">
-        {/* Perfect Top Badge - Keep this exactly as requested */}
-        {/* Perfect Top Badge - Enhanced with more animations */}
-        <div className="flex justify-center mb-16">
-          <div className="group inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-sm border border-[#66b2b2]/30 text-[#014d4e] text-xs font-bold uppercase tracking-widest shadow-sm animate-fade-in hover:scale-105 hover:shadow-lg hover:border-[#008888] transition-all duration-300 cursor-pointer relative overflow-hidden">
-            {/* Animated background */}
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#008888]/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
-
-            <Sparkles className="w-5 h-5 text-[#014d4e] animate-sparkle group-hover:animate-pulse" />
-            <span className="relative">Pay Per Install Network</span>
-
-            {/* Glowing border effect */}
-            <div className="absolute inset-0 rounded-full border-2 border-transparent group-hover:border-[#008888]/50 transition-all duration-300" />
-          </div>
-        </div>
-
-        {/* Hero Content - Flexbox Layout */}
+      <div className="relative z-10 max-w-7xl mx-auto w-full md:pt-0 pt-10">
         <div className="flex flex-col lg:flex-row items-center justify-center gap-16 lg:gap-24">
           {/* Left Content - Main Stats & CTA */}
           <div className="flex-1 max-w-2xl">
             {/* Hero Title with Animated Gradient */}
             <div className="relative mb-10">
-              <h1 className="text-3xl md:text-5xl  lg:text-6xl font-black leading-[110%] mb-8">
-                <span className="block text-gradient-wave">Monetize</span>
-                <span
-                  className="block text-gradient-wave"
-                  style={{ animationDelay: "0.2s" }}
-                >
-                  Your Traffic
+              <h1 className="text-2xl leading-2xl md:text-5xl  lg:text-6xl font-black  md:leading-[110%] mb-8">
+                <span className="block text-gradient-wave">
+                  Monetize Your Traffic Instantly Earn
                 </span>
-                <span className="text-gradient-wave  mt-6">Instantly Earn</span>
               </h1>
 
               {/* Animated Decorative Line */}
@@ -129,7 +94,7 @@ export default function HeroSection() {
                   </div>
                 </div>
                 <div className="flex-1">
-                  <div className="h-13 overflow-hidden relative">
+                  <div className="min-h-13 overflow-hidden relative">
                     {activeStat === 0 && (
                       <div className="animate-stat-slide">
                         <p className="text-sm text-[#3b8a7f] uppercase tracking-wider font-bold">
@@ -178,7 +143,7 @@ export default function HeroSection() {
             </div>
 
             {/* CTA Buttons with Hover Effects */}
-            <div className="flex flex-wrap gap-5 mb-16">
+            <div className="flex lg:justify-start justify-center flex-wrap gap-5 mb-16">
               <button className="group relative overflow-hidden bg-gradient-primary text-white px-10 py-5 rounded-2xl font-bold shadow-xl flex items-center gap-3 min-w-[200px] transition-all duration-500 hover:scale-105 hover:shadow-2xl">
                 <span className="relative z-10 flex items-center gap-3">
                   <Zap className="w-6 h-6" />
@@ -219,26 +184,26 @@ export default function HeroSection() {
                 </div>
 
                 {/* Card Content */}
-                <div className="relative z-10 p-10">
+                <div className="relative z-10 p-6">
                   {/* Header */}
-                  <div className="text-center mb-12">
+                  <div className="text-center mb-6">
                     <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-primary rounded-full mb-6">
                       <Sparkles className="w-5 h-5 text-white animate-sparkle" />
                       <span className="text-white font-bold text-sm tracking-wider">
                         REAL-TIME STATS
                       </span>
                     </div>
-                    <h3 className="text-4xl font-black text-[#014d4e] mb-4">
+                    <h3 className="text-4xl font-black text-[#014d4e] mb-1">
                       Live Performance
                     </h3>
                     <p className="text-[#3b8a7f]">Updated every minute</p>
                   </div>
 
                   {/* Main Metric Display */}
-                  <div className="relative mb-10">
+                  <div className="relative">
                     <div className="text-center">
                       <div className="relative inline-block">
-                        <div className="text-7xl md:text-8xl font-black text-gradient-primary animate-pulse-slow mb-4">
+                        <div className="text-4xl md:text-6xl font-black text-gradient-primary animate-pulse-slow mb-1">
                           $4.00
                         </div>
                       </div>
@@ -248,12 +213,12 @@ export default function HeroSection() {
                     </div>
 
                     {/* Animated Progress Ring */}
-                    <div className="relative w-64 h-64 mx-auto mt-10">
-                      <div className="absolute inset-0 rounded-full border-[8px] border-[#e0f2f2]" />
-                      <div className="absolute inset-8 rounded-full border-[8px] border-[#008888] border-t-transparent animate-spin-slow" />
-                      <div className="absolute inset-16  bg-gradient-primary rounded-full flex items-center justify-center shadow-lg">
+                    <div className="relative w-40 h-40 mx-auto mt-5">
+                      <div className="absolute inset-0 rounded-full border-[6px] border-[#e0f2f2]" />
+                      <div className="absolute inset-4 rounded-full border-[6px] border-[#008888] border-t-transparent animate-spin-slow" />
+                      <div className="absolute inset-8 bg-gradient-primary rounded-full flex items-center justify-center shadow-lg">
                         <div className="text-white text-center">
-                          <div className="text-3xl font-black">98%</div>
+                          <div className="text-xl font-black">98%</div>
                           <div className="text-xs font-bold">Success</div>
                         </div>
                       </div>
@@ -261,7 +226,7 @@ export default function HeroSection() {
                   </div>
 
                   {/* Live Updates Bar */}
-                  <div className="mt-10 pt-6 border-t border-[#66b2b2]/20">
+                  <div className="mt-8 pt-4 border-t border-[#66b2b2]/20">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-3">
                         <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
@@ -293,9 +258,6 @@ export default function HeroSection() {
             </div>
           </div>
         </div>
-
-        {/* Feature Highlights */}
-        {/* <StatsSection /> */}
       </div>
     </section>
   );
