@@ -56,7 +56,7 @@ export default function ContactSection() {
               <span className="inline-block px-4 py-1.5 mb-4 rounded-full bg-white border border-[#66b2b2]/20 text-[#014d4e] text-xs font-bold uppercase tracking-widest animate-badge-float">
                 Direct Support
               </span>
-              <h2 className="text-5xl md:text-7xl font-black text-[#014d4e] leading-[0.9] mb-6">
+              <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight text-[#014d4e]">
                 Ready to <br />
                 <span className="text-gradient-primary">Join Force?</span>
               </h2>

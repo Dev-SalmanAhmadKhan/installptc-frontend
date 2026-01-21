@@ -41,9 +41,6 @@
   background-clip: text;
 }
 
-/* ==================== ESSENTIAL ANIMATIONS ==================== */
-
-/* Base Animations */
 @keyframes fade-in {
   from {
     opacity: 0;
@@ -57,7 +54,6 @@
   animation: fade-in 1s ease-out;
 }
 
-/* Wave Gradient Text */
 @keyframes gradient-wave {
   0%,
   100% {
@@ -84,7 +80,6 @@
   animation: gradient-wave 4s ease infinite;
 }
 
-/* Orb Float Animations */
 @keyframes orb-float-1 {
   0%,
   100% {
@@ -119,7 +114,6 @@
   animation: orb-float-2 25s ease-in-out infinite;
 }
 
-/* Grid Move Animation */
 @keyframes grid-move {
   0% {
     background-position: 0 0, 0 0;
@@ -139,7 +133,6 @@
   background-size: 50px 50px;
 }
 
-/* Grid Rotate */
 @keyframes grid-rotate {
   0% {
     transform: rotate(0deg);
@@ -160,7 +153,6 @@
   background-size: 20px 20px;
 }
 
-/* Text Rise Animation */
 @keyframes text-rise {
   from {
     opacity: 0;
@@ -176,7 +168,6 @@
   animation: text-rise 1s ease-out 0.3s both;
 }
 
-/* Gradient Shift */
 @keyframes gradient-shift {
   0% {
     background-position: 0% 50%;
@@ -193,7 +184,6 @@
   animation: gradient-shift 3s ease infinite;
 }
 
-/* Badge Float */
 @keyframes badge-float {
   0%,
   100% {
@@ -208,7 +198,6 @@
   animation: badge-float 4s ease-in-out infinite;
 }
 
-/* Bounce Subtle */
 @keyframes bounce-subtle {
   0%,
   100% {
@@ -223,7 +212,6 @@
   animation: bounce-subtle 3s ease-in-out infinite;
 }
 
-/* ==================== SCROLL ANIMATIONS ==================== */
 .scroll-section {
   opacity: 0;
   transform: translateY(40px);
@@ -252,7 +240,6 @@
   background-position: center;
   background-repeat: no-repeat;
 }
-/* ==================== RESPONSIVE ==================== */
 @media (max-width: 768px) {
   .scroll-section {
     transform: translateY(20px);
@@ -268,7 +255,6 @@
   }
 }
 
-/* ==================== PERFORMANCE & ACCESSIBILITY ==================== */
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -305,7 +291,6 @@ img {
     transition-duration: 0.01ms !important;
   }
 }
-/* Add to your existing animations */
 @keyframes sparkle {
   0%,
   100% {
@@ -377,7 +362,6 @@ img {
   animation: float-delayed 8s ease-in-out infinite 1s;
 }
 
-/* Stat slide animation */
 @keyframes stat-slide {
   from {
     opacity: 0;
@@ -408,7 +392,6 @@ img {
   animation: line-flow 3s linear infinite;
 }
 
-/* Particle drift */
 @keyframes particle-drift {
   0%,
   100% {

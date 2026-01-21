@@ -19,7 +19,23 @@
 
 # production
 /build
+public/index.html
 
+# Firebase
+firebase.json
+firebase-config.js
+firebase-config.json
+.firebase/*
+.firebaserc
+# Firebase mobile configs
+google-services.json
+GoogleService-Info.plist
+*/google-services.json
+*/GoogleService-Info.plist
+
+# Firebase admin SDK keys
+*-firebase-adminsdk-*.json
+serviceAccountKey.json
 # misc
 .DS_Store
 *.pem

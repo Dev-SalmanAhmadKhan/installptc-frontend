@@ -13,9 +13,63 @@ export default function Navigation({ onNavClick }: NavigationProps) {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  const handleNavItemClick = () => {
+  const handleSmoothScroll = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => {
+    e.preventDefault();
+
+    // Close mobile menu if open
+    setIsMobileMenuOpen(false);
+
+    // Call optional onNavClick callback
+    onNavClick?.();
+
+    // If it's a hash link (internal navigation)
+    if (href.startsWith("#")) {
+      const targetId = href.substring(1);
+      const targetElement = document.getElementById(targetId);
+
+      if (targetElement) {
+        // Calculate offset for fixed header
+        const headerHeight = 80; // Match your header height
+        const targetPosition = targetElement.getBoundingClientRect().top;
+        const offsetPosition =
+          targetPosition + window.pageYOffset - headerHeight;
+
+        // Smooth scroll to element
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
+
+        // Update URL hash without scrolling
+        window.history.pushState(null, "", href);
+      }
+    } else {
+      // For external links or non-hash links, navigate normally
+      window.location.href = href;
+    }
+  };
+
+  const handleGetStartedClick = () => {
     setIsMobileMenuOpen(false);
     onNavClick?.();
+
+    // Smooth scroll to contact section
+    const contactElement = document.getElementById("contact");
+    if (contactElement) {
+      const headerHeight = 80;
+      const targetPosition = contactElement.getBoundingClientRect().top;
+      const offsetPosition = targetPosition + window.pageYOffset - headerHeight;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+
+      window.history.pushState(null, "", "#contact");
+    }
   };
 
   return (
@@ -23,9 +77,13 @@ export default function Navigation({ onNavClick }: NavigationProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex justify-between items-center">
         {/* Logo */}
         <div className="flex items-center gap-3">
-          <div className="text-2xl font-black text-[#014d4e]">
+          <a
+            href="#hero"
+            onClick={(e) => handleSmoothScroll(e, "#hero")}
+            className="text-2xl font-black text-[#014d4e] hover:text-[#008888] transition-colors"
+          >
             INSTALL<span className="text-[#008888]">PTC</span>
-          </div>
+          </a>
         </div>
 
         {/* Desktop Navigation */}
@@ -34,17 +92,19 @@ export default function Navigation({ onNavClick }: NavigationProps) {
             <a
               key={item.href}
               href={item.href}
-              className="hover:text-[#008888] transition-colors"
+              onClick={(e) => handleSmoothScroll(e, item.href)}
+              className="hover:text-[#008888] transition-colors relative group"
             >
               {item.label}
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#014d4e] to-[#008888] transition-all group-hover:w-full"></span>
             </a>
           ))}
-          <a
-            href="#contact"
-            className="bg-gradient-primary text-white px-6 py-2.5 rounded-full shadow-md hover:shadow-lg transition-all"
+          <button
+            onClick={handleGetStartedClick}
+            className="bg-gradient-primary text-white px-6 py-2.5 rounded-full shadow-md hover:shadow-lg transition-all hover:bg-linear-to-r from-[#014d4e] to-[#008888] cursor-pointer"
           >
             Get Started
-          </a>
+          </button>
         </div>
 
         {/* Mobile Menu Button */}
@@ -66,24 +126,23 @@ export default function Navigation({ onNavClick }: NavigationProps) {
             : "max-h-0 opacity-0 invisible"
         } overflow-hidden`}
       >
-        <div className="px-4 py-6 space-y-6">
+        <div className="px-4 py-6 space-y-4">
           {navigationData.map((item) => (
             <a
               key={item.href}
               href={item.href}
-              className="block font-semibold text-sm uppercase tracking-wider hover:text-[#008888] transition-colors py-2"
-              onClick={handleNavItemClick}
+              onClick={(e) => handleSmoothScroll(e, item.href)}
+              className="block font-semibold text-sm uppercase tracking-wider hover:text-[#008888] transition-colors py-3 px-4 rounded-lg hover:bg-[#e0f2f2]"
             >
               {item.label}
             </a>
           ))}
-          <a
-            href="#contact"
-            className="block bg-gradient-primary text-white px-6 py-3 rounded-full shadow-md hover:shadow-lg transition-all text-center font-semibold text-sm uppercase tracking-wider mt-4"
-            onClick={handleNavItemClick}
+          <button
+            onClick={handleGetStartedClick}
+            className="w-full bg-gradient-primary text-white px-6 py-3 rounded-full shadow-md hover:shadow-lg transition-all hover:bg-gradient-primary/20 font-semibold text-sm uppercase "
           >
             Get Started
-          </a>
+          </button>
         </div>
       </div>
     </nav>
