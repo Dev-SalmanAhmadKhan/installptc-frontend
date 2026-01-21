@@ -118,7 +118,7 @@ export default function ContactSection() {
                 <button
                   type="submit"
                   disabled={isSubmitting || isSuccess}
-                  className={`w-full relative py-5 rounded-2xl font-bold transition-all duration-300 flex items-center justify-center gap-3 active:scale-[0.98] overflow-hidden
+                  className={`w-full cursor-pointer relative py-5 rounded-2xl font-bold transition-all duration-300 flex items-center justify-center gap-3 active:scale-[0.98] overflow-hidden
                     ${
                       isSuccess
                         ? "bg-green-500 text-white"

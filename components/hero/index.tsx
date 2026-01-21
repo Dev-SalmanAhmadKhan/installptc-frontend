@@ -1,23 +1,5 @@
-import {
-  ArrowRight,
-  TrendingUp,
-  Users,
-  Sparkles,
-  Zap,
-  DollarSign,
-  Target,
-  BarChart3,
-  Shield,
-  Globe,
-  Rocket,
-  Award,
-  CheckCircle,
-  Clock,
-  Layers,
-  Star,
-} from "lucide-react";
+import { ArrowRight, Zap, BarChart3, Sparkles, Award } from "lucide-react";
 import { useEffect, useState } from "react";
-import StatsSection from "../stats";
 
 export default function HeroSection() {
   const [isVisible, setIsVisible] = useState(false);
@@ -77,74 +59,11 @@ export default function HeroSection() {
                 </span>
                 with industry-leading payouts and real-time analytics.
               </p>
-
-              {/* Rotating Stats Display */}
-              <div className="flex items-center gap-6 p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-[#66b2b2]/20 shadow-lg">
-                <div className="flex-shrink-0">
-                  <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center shadow-lg">
-                    {activeStat === 0 && (
-                      <DollarSign className="w-8 h-10 text-white" />
-                    )}
-                    {activeStat === 1 && (
-                      <Users className="w-8 h-10 text-white" />
-                    )}
-                    {activeStat === 2 && (
-                      <TrendingUp className="w-8 h-10 text-white" />
-                    )}
-                  </div>
-                </div>
-                <div className="flex-1">
-                  <div className="min-h-13 overflow-hidden relative">
-                    {activeStat === 0 && (
-                      <div className="animate-stat-slide">
-                        <p className="text-sm text-[#3b8a7f] uppercase tracking-wider font-bold">
-                          Max Earnings
-                        </p>
-                        <p className="text-2xl font-black text-[#014d4e]">
-                          $4.00 per install
-                        </p>
-                      </div>
-                    )}
-                    {activeStat === 1 && (
-                      <div className="animate-stat-slide">
-                        <p className="text-sm text-[#3b8a7f] uppercase tracking-wider font-bold">
-                          Active Publishers
-                        </p>
-                        <p className="text-2xl font-black text-[#014d4e]">
-                          12,000+ Worldwide
-                        </p>
-                      </div>
-                    )}
-                    {activeStat === 2 && (
-                      <div className="animate-stat-slide">
-                        <p className="text-sm text-[#3b8a7f] uppercase tracking-wider font-bold">
-                          Total Payouts
-                        </p>
-                        <p className="text-2xl font-black text-[#014d4e] h-9!">
-                          $90M+ & Counting
-                        </p>
-                      </div>
-                    )}
-                  </div>
-                </div>
-                <div className="flex gap-1">
-                  {[0, 1, 2].map((i) => (
-                    <div
-                      key={i}
-                      className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                        activeStat === i
-                          ? "bg-gradient-primary w-6"
-                          : "bg-[#66b2b2]"
-                      }`}
-                    />
-                  ))}
-                </div>
-              </div>
             </div>
 
             {/* CTA Buttons with Hover Effects */}
             <div className="flex lg:justify-start justify-center flex-wrap gap-5 mb-16">
-              <button className="group relative overflow-hidden bg-gradient-primary text-white px-10 py-5 rounded-2xl font-bold shadow-xl flex items-center gap-3 min-w-[200px] transition-all duration-500 hover:scale-105 hover:shadow-2xl">
+              <button className="group cursor-pointer relative overflow-hidden bg-gradient-primary text-white px-10 py-5 rounded-2xl font-bold shadow-xl flex items-center gap-3 min-w-[200px] transition-all duration-500 hover:scale-105 hover:shadow-2xl">
                 <span className="relative z-10 flex items-center gap-3">
                   <Zap className="w-6 h-6" />
                   <span>Start Earning Now</span>
@@ -157,7 +76,7 @@ export default function HeroSection() {
                 <div className="absolute -inset-1 bg-gradient-primary blur-lg opacity-0 group-hover:opacity-30 transition-opacity duration-500" />
               </button>
 
-              <button className="group relative overflow-hidden bg-white text-[#014d4e] px-10 py-5 rounded-2xl font-bold border-2 border-[#66b2b2]/30 hover:border-[#008888] transition-all duration-500 hover:scale-105 hover:shadow-xl min-w-[200px]">
+              <button className="group  cursor-pointer relative overflow-hidden bg-white text-[#014d4e] px-10 py-5 rounded-2xl font-bold border-2 border-[#66b2b2]/30 hover:border-[#008888] transition-all duration-500 hover:scale-105 hover:shadow-xl min-w-[200px]">
                 <span className="relative z-10 flex items-center gap-3">
                   <BarChart3 className="w-6 h-6" />
                   <span>View Dashboard</span>
@@ -260,45 +179,5 @@ export default function HeroSection() {
         </div>
       </div>
     </section>
-  );
-}
-
-function TrustBadge({ icon, label, value }: any) {
-  return (
-    <div className="group relative overflow-hidden bg-white/80 backdrop-blur-sm p-4 rounded-2xl border border-[#66b2b2]/20 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:border-[#008888]">
-      <div className="flex items-center gap-4">
-        <div className="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center shadow-md">
-          <div className="text-white">{icon}</div>
-        </div>
-        <div>
-          <p className="text-xs font-bold text-[#3b8a7f] uppercase tracking-wider">
-            {label}
-          </p>
-          <p className="text-lg font-black text-[#014d4e]">{value}</p>
-        </div>
-      </div>
-      <div className="absolute bottom-0 left-0 w-0 h-1 bg-gradient-primary rounded-full transition-all duration-300 group-hover:w-full" />
-    </div>
-  );
-}
-
-function HighlightFeature({ icon, title, description, delay }: any) {
-  return (
-    <div
-      className="group relative overflow-hidden bg-white/90 backdrop-blur-sm p-8 rounded-3xl border border-[#66b2b2]/20 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:border-[#008888]/30"
-      style={{ animationDelay: `${delay}s` }}
-    >
-      <div className="relative z-10">
-        <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center shadow-lg mb-6 transform transition-all duration-300 group-hover:scale-110 group-hover:rotate-6">
-          <div className="text-white">{icon}</div>
-        </div>
-        <h3 className="text-2xl font-black text-[#014d4e] mb-3">{title}</h3>
-        <p className="text-[#3b8a7f] leading-relaxed">{description}</p>
-      </div>
-      <div className="absolute -inset-1 bg-gradient-primary rounded-3xl opacity-0 group-hover:opacity-5 transition-opacity duration-500" />
-      <div className="absolute bottom-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-        <ArrowRight className="w-6 h-6 text-[#008888]" />
-      </div>
-    </div>
   );
 }

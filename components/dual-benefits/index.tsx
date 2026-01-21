@@ -57,7 +57,7 @@ export default function DualBenefitsSection() {
         {/* Call to Action */}
         <div className="text-center mt-16 animate-text-rise">
           <div className="inline-block p-px rounded-2xl bg-gradient-to-r from-[#008888] to-[#014d4e] animate-gradient-shift">
-            <button className="bg-[#014d4e] text-white px-8 py-4 rounded-2xl font-bold text-lg hover:bg-transparent transition-all duration-300 hover:scale-105">
+            <button className="bg-[#014d4e] cursor-pointer text-white px-8 py-4 rounded-2xl font-bold text-lg hover:bg-transparent transition-all duration-300 hover:scale-105">
               Start Benefiting Today
             </button>
           </div>
@@ -128,7 +128,7 @@ function BenefitCard({ benefit, index }: BenefitCardProps) {
       {/* Action Button */}
       <div className="relative group/btn">
         <div className="absolute -inset-1 bg-gradient-to-r from-[#008888] to-[#014d4e] rounded-2xl blur opacity-0 group-hover/btn:opacity-70 transition-opacity duration-500" />
-        <button className="relative w-full bg-gradient-to-r from-[#014d4e] to-[#008888] text-white py-4 px-6 rounded-2xl font-bold text-lg shadow-lg hover:shadow-xl transition-all duration-300 group-hover/btn:scale-[1.02]">
+        <button className="relative cursor-pointer w-full bg-gradient-to-r from-[#014d4e] to-[#008888] text-white py-4 px-6 rounded-2xl font-bold text-lg shadow-lg hover:shadow-xl transition-all duration-300 group-hover/btn:scale-[1.02]">
           <span className="flex items-center justify-center gap-2">
             {benefit.buttonText}
             <svg
