@@ -4,10 +4,8 @@ import { navigationData } from "@/data/navigation";
 const footerLinks = {
   quickLinks: navigationData,
   importantLinks: [
-    "Terms & Conditions",
-    "Privacy Policy",
-    "Contact",
-    "Publisher Sign Up",
+    { label: "Terms & Conditions", href: "/terms-and-conditions" },
+    { label: "Privacy Policy", href: "/privacy-policy" },
   ],
 } as const;
 
@@ -51,12 +49,12 @@ export default function Footer() {
             <h4 className="font-bold mb-6 text-[#008888]">Important Links</h4>
             <ul className="text-gray-400 space-y-3 text-sm">
               {footerLinks.importantLinks.map((item) => (
-                <li key={item}>
+                <li key={item.href}>
                   <a
-                    href="#"
+                    href={item.href}
                     className="hover:text-[#008888] transition-colors"
                   >
-                    {item}
+                    {item.label}
                   </a>
                 </li>
               ))}
@@ -67,14 +65,28 @@ export default function Footer() {
           <div>
             <h4 className="font-bold mb-6 text-[#008888]">Connect With Us</h4>
             <div className="flex gap-4 mb-6">
-              <SocialIcon icon={<Facebook size={20} />} />
-              <SocialIcon icon={<Twitter size={20} />} />
-              <SocialIcon icon={<Instagram size={20} />} />
+              <SocialIcon
+                icon={<Facebook size={20} />}
+                href="https://facebook.com"
+              />
+              <SocialIcon
+                icon={<Twitter size={20} />}
+                href="https://twitter.com"
+              />
+              <SocialIcon
+                icon={<Instagram size={20} />}
+                href="https://instagram.com"
+              />
             </div>
             <div className="space-y-3 text-sm text-gray-400">
               <p className="flex items-center gap-2">
                 <Mail size={14} />
-                <span>support@installptc.com</span>
+                <a
+                  href="mailto:support@installptc.com"
+                  className="hover:text-[#008888] transition-colors"
+                >
+                  support@installptc.com
+                </a>
               </p>
             </div>
           </div>
@@ -91,12 +103,18 @@ export default function Footer() {
 
 interface SocialIconProps {
   icon: React.ReactNode;
+  href: string;
 }
 
-function SocialIcon({ icon }: SocialIconProps) {
+function SocialIcon({ icon, href }: SocialIconProps) {
   return (
-    <div className="hover:text-[#008888] cursor-pointer transition-colors">
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="hover:text-[#008888] cursor-pointer transition-colors"
+    >
       {icon}
-    </div>
+    </a>
   );
 }
