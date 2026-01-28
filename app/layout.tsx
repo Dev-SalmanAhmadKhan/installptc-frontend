@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, K2D } from "next/font/google";
 import "./globals.css";
+import Navigation from "@/components/navigation";
+import Footer from "@/components/footer";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -64,31 +66,26 @@ export const metadata: Metadata = {
     images: ["/twitter-image.png"],
   },
 
-  // Additional metadata for InstallPTC
   applicationName: "InstallPTC",
   category: "Advertising Technology",
   publisher: "InstallPTC Network",
 
-  // Verification metadata (add your actual values)
   verification: {
-    google: "your-google-verification-code", // Replace with actual code
-    yandex: "your-yandex-verification-code", // Replace if needed
-    yahoo: "your-yahoo-verification-code", // Replace if needed
+    google: "your-google-verification-code",
+    yandex: "your-yandex-verification-code",
+    yahoo: "your-yahoo-verification-code",
   },
 
-  // Structured data for better SEO
   alternates: {
     canonical: "https://installptc.com",
   },
 
-  // Mobile app specific metadata
   appleWebApp: {
     capable: true,
     title: "InstallPTC",
     statusBarStyle: "black-translucent",
   },
 
-  // Viewport settings for responsive design
   viewport: {
     width: "device-width",
     initialScale: 1,
@@ -157,7 +154,9 @@ export default function RootLayout({
         />
       </head>
       <body className="font-sans antialiased bg-[#f6fbfb] text-[#002525]">
-        {children}
+        <Navigation />
+        <main className="min-h-screen">{children}</main>
+        <Footer />
       </body>
     </html>
   );

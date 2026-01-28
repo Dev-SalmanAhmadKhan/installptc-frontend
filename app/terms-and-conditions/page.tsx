@@ -9,22 +9,8 @@ export const metadata: Metadata = {
 
 export default function TermsAndConditions() {
   return (
-    <div className="min-h-screen bg-[#f6fbfb] font-sans text-[#002525] overflow-x-hidden">
+    <div className="min-h-screen bg-[#f6fbfb] font-sans text-[#002525] overflow-x-hidden lg:pt-20 pt-10">
       <div className="max-w-4xl mx-auto px-4 py-20">
-        {/* Back to Home Button */}
-        <div className="mb-8">
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 text-[#008888] hover:text-[#014d4e] font-medium transition-colors group"
-          >
-            <ArrowLeft
-              size={18}
-              className="group-hover:-translate-x-1 transition-transform"
-            />
-            Back to Home
-          </Link>
-        </div>
-
         <h1 className="text-4xl md:text-5xl font-bold mb-8 text-[#005f5f]">
           Terms & Conditions
         </h1>

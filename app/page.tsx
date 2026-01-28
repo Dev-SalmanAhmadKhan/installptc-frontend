@@ -3,15 +3,13 @@
 import ContactSection from "@/components/contact-us";
 import DualBenefitsSection from "@/components/dual-benefits";
 import FAQSection from "@/components/faq";
-import Footer from "@/components/footer";
 import HeroSection from "@/components/hero";
 import HowItWorksSection from "@/components/how-it-works";
-import Navigation from "@/components/navigation";
 import TestimonialsSection from "@/components/testimonials";
 import WhyChooseSection from "@/components/why-choose-us";
 import { useEffect } from "react";
 
-export default function InstallPTCLanding() {
+export default function Home() {
   useEffect(() => {
     const observerOptions = {
       threshold: 0.1,
@@ -34,18 +32,14 @@ export default function InstallPTCLanding() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#f6fbfb] font-sans text-[#002525] overflow-x-hidden">
-      <Navigation />
+    <>
       <HeroSection />
-
       <DualBenefitsSection />
       <WhyChooseSection />
       <HowItWorksSection />
       <FAQSection />
       <TestimonialsSection />
-
       <ContactSection />
-      <Footer />
-    </div>
+    </>
   );
 }
