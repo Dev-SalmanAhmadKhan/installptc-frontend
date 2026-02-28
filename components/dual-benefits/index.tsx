@@ -1,8 +1,38 @@
 import { CheckCircle } from "lucide-react";
 import Image from "next/image";
 import { benefitData } from "@/data/benefits";
+import { useRouter } from "next/navigation";
 
 export default function DualBenefitsSection() {
+  const router = useRouter();
+
+  const handleButtonClick = (buttonLink: string) => {
+    if (buttonLink.startsWith("#")) {
+      const targetId = buttonLink.substring(1);
+      const targetElement = document.getElementById(targetId);
+
+      if (targetElement) {
+        const headerHeight = 80;
+        const targetPosition = targetElement.getBoundingClientRect().top;
+        const offsetPosition =
+          targetPosition + window.pageYOffset - headerHeight;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
+
+        window.history.pushState(null, "", buttonLink);
+      }
+    } else if (buttonLink.startsWith("http")) {
+      // Handle external links
+      window.open(buttonLink, "_blank", "noopener,noreferrer");
+    } else {
+      // Handle internal routes
+      router.push(buttonLink);
+    }
+  };
+
   return (
     <section
       id="benefits"
@@ -53,7 +83,12 @@ export default function DualBenefitsSection() {
         {/* Benefits Cards Grid */}
         <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
           {benefitData.map((benefit, index) => (
-            <BenefitCard key={benefit.type} benefit={benefit} index={index} />
+            <BenefitCard
+              key={benefit.type}
+              benefit={benefit}
+              index={index}
+              onButtonClick={handleButtonClick}
+            />
           ))}
         </div>
       </div>
@@ -64,9 +99,10 @@ export default function DualBenefitsSection() {
 interface BenefitCardProps {
   benefit: (typeof benefitData)[number];
   index: number;
+  onButtonClick: (buttonLink: string) => void;
 }
 
-function BenefitCard({ benefit, index }: BenefitCardProps) {
+function BenefitCard({ benefit, index, onButtonClick }: BenefitCardProps) {
   const IconComponent = benefit.icon;
 
   return (
@@ -119,7 +155,10 @@ function BenefitCard({ benefit, index }: BenefitCardProps) {
       {/* Action Button */}
       <div className="relative group/btn">
         <div className="absolute -inset-1 bg-gradient-to-r from-[#008888] to-[#014d4e] rounded-2xl blur opacity-0 group-hover/btn:opacity-70 transition-opacity duration-500" />
-        <button className="relative cursor-pointer w-full bg-gradient-to-r from-[#014d4e] to-[#008888] text-white py-4 px-6 rounded-2xl font-bold text-lg shadow-lg hover:shadow-xl transition-all duration-300 group-hover/btn:scale-[1.02]">
+        <button
+          onClick={() => onButtonClick(benefit.buttonLink)}
+          className="relative cursor-pointer w-full bg-gradient-to-r from-[#014d4e] to-[#008888] text-white py-4 px-6 rounded-2xl font-bold text-lg shadow-lg hover:shadow-xl transition-all duration-300 group-hover/btn:scale-[1.02]"
+        >
           <span className="flex items-center justify-center gap-2">
             {benefit.buttonText}
             <svg
