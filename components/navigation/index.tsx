@@ -2,6 +2,8 @@
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { navigationData } from "@/data/navigation";
+import { ROUTES } from "@/lib/routes";
+import Image from "next/image";
 
 interface NavigationProps {
   onNavClick?: () => void;
@@ -57,33 +59,27 @@ export default function Navigation({ onNavClick }: NavigationProps) {
     setIsMobileMenuOpen(false);
     onNavClick?.();
 
-    // Smooth scroll to contact section
-    const contactElement = document.getElementById("contact");
-    if (contactElement) {
-      const headerHeight = 80;
-      const targetPosition = contactElement.getBoundingClientRect().top;
-      const offsetPosition = targetPosition + window.pageYOffset - headerHeight;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      });
-
-      window.history.pushState(null, "", "#contact");
-    }
+    // Redirect to dashboard
+    window.location.href = ROUTES.DASHBOARD;
   };
 
   return (
-    <nav className="fixed w-full z-50 bg-white/95 backdrop-blur-md border-b border-[#66b2b2]/20 shadow-sm">
+    <nav className="fixed w-full z-50 bg-[#f7f7f7] backdrop-blur-md border-b border-[#66b2b2]/20 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex justify-between items-center">
         {/* Logo */}
         <div className="flex items-center gap-3">
           <a
             href="#hero"
             onClick={(e) => handleSmoothScroll(e, "#hero")}
-            className="text-2xl font-black text-[#014d4e] hover:text-[#008888] transition-colors"
+            className="flex items-center gap-2"
           >
-            INSTALL<span className="text-[#008888]">PTC</span>
+            <Image
+              src="/logos/logo.jpeg"
+              alt="Adsnes Logo"
+              width={120}
+              height={40}
+              className="rounded-lg"
+            />
           </a>
         </div>
 
@@ -140,7 +136,7 @@ export default function Navigation({ onNavClick }: NavigationProps) {
           ))}
           <button
             onClick={handleGetStartedClick}
-            className="w-full bg-gradient-primary text-white px-6 py-3 rounded-full shadow-md hover:shadow-lg transition-all hover:bg-gradient-primary/20 font-semibold text-sm uppercase "
+            className="w-full bg-gradient-primary text-white px-6 py-3 rounded-full shadow-md hover:shadow-lg transition-all hover:bg-gradient-primary/20 font-semibold text-sm uppercase"
           >
             Get Started
           </button>

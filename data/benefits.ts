@@ -1,3 +1,4 @@
+import { ROUTES } from "@/lib/routes";
 import { BenefitDataType } from "@/types";
 import { Target, DollarSign } from "lucide-react";
 
@@ -7,23 +8,25 @@ export const benefitData: BenefitDataType[] = [
     icon: Target,
     title: "Advertiser",
     features: [
-      "Targeted global traffic for your software",
-      "Pay only for verified installs",
-      "Real-time analytics and detailed stats",
-      "Custom installer with your branding",
+      "Reach high-quality global traffic tailored to your target audience",
+      "Pay only for real clicks, installs, or impressions",
+      "Advanced targeting with geo, device, and OS filters",
+      "Real-time tracking with transparent performance reporting",
     ],
-    buttonText: "Start Campaign",
+    buttonText: "Contact",
+    buttonLink: ROUTES.CONTACT,
   },
   {
     type: "publisher",
     icon: DollarSign,
     title: "Publisher",
     features: [
-      "Earn up to $4 per install from your traffic",
-      "Multiple payment methods available",
-      "Weekly or monthly payment cycles",
-      "Clean installers, no malware or blockage",
+      "Monetize your website or app with high-paying CPC & CPI offers",
+      "Earn competitive payouts for every valid click and install",
+      "Access exclusive campaigns with high conversion rates",
+      "Fast weekly or monthly payments with secure withdrawal options",
     ],
-    buttonText: "Join as Publisher",
+    buttonText: "Signup or login dashboard",
+    buttonLink: ROUTES.DASHBOARD,
   },
 ];

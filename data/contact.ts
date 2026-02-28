@@ -5,11 +5,11 @@ export const contactData: ContactDataType[] = [
   {
     icon: Mail,
     label: "Email",
-    value: "support@installptc.com",
+    value: "support@adsnes.com",
   },
   {
     icon: Phone,
     label: "Skype",
-    value: "installptc",
+    value: "adsnes",
   },
 ];

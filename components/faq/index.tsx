@@ -24,14 +24,14 @@ export default function FAQSection() {
       <div className="max-w-4xl mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-[#66b2b2]/20 text-[#014d4e] text-xs font-bold uppercase tracking-widest mb-4 shadow-sm animate-badge-float">
-            <HelpCircle size={14} className="text-[#008888]" /> Support Center
+            <HelpCircle size={14} className="text-[#008888]" /> FAQ
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight text-[#014d4e]">
-            Common <span className="text-gradient-primary">Queries</span>
+            Frequently Asked{" "}
+            <span className="text-gradient-primary">Questions</span>
           </h2>
           <p className="text-[#3b8a7f] max-w-md mx-auto">
-            Everything you need to know about our payout systems and integration
-            process.
+            Everything you need to know about Adsnes and how to get started.
           </p>
         </div>
 

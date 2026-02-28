@@ -4,7 +4,10 @@ import { benefitData } from "@/data/benefits";
 
 export default function DualBenefitsSection() {
   return (
-    <section className="py-24 scroll-section benefits relative overflow-hidden">
+    <section
+      id="benefits"
+      className="py-24 scroll-section benefits relative overflow-hidden"
+    >
       {/* Background Image with gradient overlay */}
       <div className="absolute inset-0 -z-10">
         <Image
@@ -38,7 +41,7 @@ export default function DualBenefitsSection() {
           <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight text-white">
             Benefit from{" "}
             <span className="text-gradient-wave bg-clip-text text-transparent">
-              InstallPTC
+              Adsnes
             </span>
           </h2>
           <p className="text-lg text-white/80 max-w-2xl mx-auto">
@@ -52,18 +55,6 @@ export default function DualBenefitsSection() {
           {benefitData.map((benefit, index) => (
             <BenefitCard key={benefit.type} benefit={benefit} index={index} />
           ))}
-        </div>
-
-        {/* Call to Action */}
-        <div className="text-center mt-16 animate-text-rise">
-          <div className="inline-block p-px rounded-2xl bg-gradient-to-r from-[#008888] to-[#014d4e] animate-gradient-shift">
-            <button className="bg-[#014d4e] cursor-pointer text-white px-8 py-4 rounded-2xl font-bold text-lg hover:bg-transparent transition-all duration-300 hover:scale-105">
-              Start Benefiting Today
-            </button>
-          </div>
-          <p className="text-white/60 mt-4 text-sm">
-            Join thousands of satisfied users
-          </p>
         </div>
       </div>
     </section>

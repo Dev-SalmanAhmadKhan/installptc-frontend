@@ -1,11 +1,20 @@
-import { Mail, Facebook, Twitter, Instagram } from "lucide-react";
+import {
+  Mail,
+  Facebook,
+  MessageCircle,
+  MessageSquare,
+  Send,
+} from "lucide-react";
 import { navigationData } from "@/data/navigation";
+import { ROUTES } from "@/lib/routes";
+import Image from "next/image";
 
 const footerLinks = {
   quickLinks: navigationData,
   importantLinks: [
-    { label: "Terms & Conditions", href: "/terms-and-conditions" },
-    { label: "Privacy Policy", href: "/privacy-policy" },
+    { label: "Terms & Conditions", href: ROUTES.TERMS },
+    { label: "Privacy Policy", href: ROUTES.PRIVACY },
+    { label: "Cookies Policy", href: ROUTES.COOKIES },
   ],
 } as const;
 
@@ -18,12 +27,18 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-12 mb-16 border-b border-white/10 pb-16">
           {/* Company Info */}
           <div className="space-y-4">
-            <div className="text-2xl font-black">
-              INSTALL<span className="text-[#008888]">PTC</span>
+            <div className="flex items-center gap-2">
+              <Image
+                src="/logos/logo.jpeg"
+                alt="Adsnes Logo"
+                width={100}
+                height={32}
+                className="rounded-lg"
+              />
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
-              The most trusted pay-per-install network for advertisers and
-              publishers worldwide.
+              A trusted performance advertising network built for real growth
+              and measurable results.
             </p>
           </div>
 
@@ -64,28 +79,36 @@ export default function Footer() {
           {/* Social & Contact */}
           <div>
             <h4 className="font-bold mb-6 text-[#008888]">Connect With Us</h4>
-            <div className="flex gap-4 mb-6">
+            <div className="flex gap-4 mb-6 flex-wrap">
               <SocialIcon
                 icon={<Facebook size={20} />}
-                href="https://facebook.com"
+                href="https://www.facebook.com/adsnes/"
+                label="Facebook"
               />
               <SocialIcon
-                icon={<Twitter size={20} />}
-                href="https://twitter.com"
+                icon={<MessageSquare size={20} />}
+                href="https://teams.live.com/l/invite/FEAuBJ3mJFY77lw4QE?v=g1"
+                label="Teams"
               />
               <SocialIcon
-                icon={<Instagram size={20} />}
-                href="https://instagram.com"
+                icon={<MessageCircle size={20} />}
+                href="https://discord.gg/R9U9eJYdbr"
+                label="Discord"
+              />
+              <SocialIcon
+                icon={<Send size={20} />}
+                href="https://t.me/adsnes_support"
+                label="Telegram"
               />
             </div>
             <div className="space-y-3 text-sm text-gray-400">
               <p className="flex items-center gap-2">
                 <Mail size={14} />
                 <a
-                  href="mailto:support@installptc.com"
+                  href="mailto:support@adsnes.com"
                   className="hover:text-[#008888] transition-colors"
                 >
-                  support@installptc.com
+                  support@adsnes.com
                 </a>
               </p>
             </div>
@@ -93,7 +116,7 @@ export default function Footer() {
         </div>
         <div className="text-center">
           <p className="text-gray-500 text-xs">
-            © {currentYear} InstallPTC. All rights reserved.
+            © {currentYear} Adsnes. All rights reserved.
           </p>
         </div>
       </div>
@@ -104,17 +127,22 @@ export default function Footer() {
 interface SocialIconProps {
   icon: React.ReactNode;
   href: string;
+  label: string;
 }
 
-function SocialIcon({ icon, href }: SocialIconProps) {
+function SocialIcon({ icon, href, label }: SocialIconProps) {
   return (
     <a
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="hover:text-[#008888] cursor-pointer transition-colors"
+      className="hover:text-[#008888] cursor-pointer transition-colors group relative"
+      aria-label={label}
     >
       {icon}
+      <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 text-xs bg-[#008888] text-white px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+        {label}
+      </span>
     </a>
   );
 }
