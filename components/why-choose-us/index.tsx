@@ -6,10 +6,11 @@ export default function WhyChooseSection() {
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4 tracking-tight">
-            Why Choose <span className="text-gradient-primary">InstallPTC</span>
+            Why Choose <span className="text-gradient-primary">Adsnes</span>
           </h2>
-          <p className="text-[#3b8a7f]">
-            The most trusted pay-per-install network
+          <p className="text-[#3b8a7f] max-w-2xl mx-auto">
+            A trusted performance advertising network built for real growth and
+            measurable results.
           </p>
         </div>
         <div className="grid md:grid-cols-3 gap-6">
@@ -42,7 +43,9 @@ function ServiceCardItem({ service }: ServiceCardItemProps) {
       <h3 className="text-xl font-bold mb-2 text-[#005f5f] group-hover:text-[#008888] transition-colors">
         {service.title}
       </h3>
-      <p className="text-sm text-[#3b8a7f]">{service.description}</p>
+      <p className="text-sm text-[#3b8a7f] leading-relaxed">
+        {service.description}
+      </p>
     </div>
   );
 }

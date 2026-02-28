@@ -1,39 +1,48 @@
-import { Shield, Globe, BarChart3, Zap, Users, TrendingUp } from "lucide-react";
+import {
+  Shield,
+  Globe,
+  BarChart3,
+  Clock,
+  HeadphonesIcon,
+  TrendingUp,
+} from "lucide-react";
 import type { ServiceDataType } from "@/types";
 
 export const serviceData: ServiceDataType[] = [
   {
     icon: Shield,
-    title: "Safe & Secure",
+    title: "Safe & Secure Platform",
     description:
-      "Clean installers verified by top antivirus companies. No malware, guaranteed.",
+      "All traffic and installs are carefully monitored and verified. Advanced fraud detection systems ensure clean, malware-free campaigns for both advertisers and publishers.",
   },
   {
     icon: Globe,
-    title: "Global Reach",
+    title: "Worldwide Traffic Access",
     description:
-      "Access worldwide traffic with geo-targeting options for maximum ROI.",
+      "Reach users across multiple countries with advanced geo, device, and OS targeting to maximize ROI and campaign efficiency.",
   },
   {
     icon: BarChart3,
-    title: "Real-time Stats",
+    title: "Real-Time Performance Tracking",
     description:
-      "Track your campaigns and earnings with detailed analytics dashboard.",
+      "Track clicks, installs, impressions, and earnings instantly through a powerful dashboard with transparent reporting.",
   },
   {
-    icon: Zap,
-    title: "Fast Payouts",
+    icon: Clock,
+    title: "On-Time Payments",
     description:
-      "Weekly and monthly payment cycles with multiple withdrawal methods.",
+      "Enjoy secure weekly or monthly payouts with multiple withdrawal methods and low minimum thresholds.",
   },
   {
-    icon: Users,
-    title: "24/7 Support",
-    description: "Dedicated account managers ready to help you succeed.",
+    icon: HeadphonesIcon,
+    title: "24/7 Expert Support",
+    description:
+      "Our experienced account managers are available to help optimize campaigns and maximize your revenue potential.",
   },
   {
     icon: TrendingUp,
-    title: "High Performance",
-    description: "Optimized conversion rates with industry-leading technology.",
+    title: "Optimized for Performance",
+    description:
+      "Industry-leading optimization technology ensures higher conversion rates and better returns for advertisers and publishers alike.",
   },
 ];

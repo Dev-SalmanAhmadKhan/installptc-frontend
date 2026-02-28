@@ -17,72 +17,65 @@ const k2d = K2D({
 
 export const metadata: Metadata = {
   title:
-    "InstallPTC - Premium Pay-Per-Install Network | Monetize Downloads & Earn",
+    "Adsnes - Premium Performance Advertising Network | Monetize Traffic & Earn",
   description:
-    "Join the largest pay-per-install network. Monetize your website traffic or promote software installations. Earn up to $4 per install with real-time tracking and fast payouts.",
+    "Join the largest performance-based advertising network. Monetize your website traffic or promote campaigns with CPC, CPI & CPM. Real-time tracking and fast payouts.",
   keywords: [
     "pay-per-install",
     "PPI network",
-    "monetize downloads",
-    "software installs",
+    "monetize traffic",
+    "CPC network",
+    "CPI network",
     "advertising network",
     "publisher earnings",
-    "install monetization",
-    "traffic monetization",
-    "download network",
     "advertiser platform",
+    "performance marketing",
+    "digital advertising",
   ],
-  authors: [{ name: "InstallPTC" }],
+  authors: [{ name: "Adsnes" }],
   robots: "index, follow",
 
   icons: {
-    icon: [
-      { url: "/logos/fav.svg", type: "image/svg+xml" },
-      { url: "/favicon.ico", sizes: "any" },
-    ],
-    apple: [{ url: "/apple-touch-icon.png" }],
+    icon: [{ url: "/logos/favicon.ico", type: "image/jpeg" }],
+    apple: [{ url: "/logos/favicon.ico" }],
+    shortcut: ["/logos/favicon.ico"],
   },
   manifest: "/site.webmanifest",
 
   openGraph: {
     type: "website",
-    title: "InstallPTC - Premium Pay-Per-Install Network",
+    title: "Adsnes - Premium Performance Advertising Network",
     description:
-      "Connect advertisers with publishers for software install monetization. Earn up to $4 per verified install with weekly payouts.",
+      "Connect advertisers with publishers for performance-based campaigns. Real-time tracking with transparent reporting.",
     images: [
       {
-        url: "/og-image.png",
+        url: "/logo.jpeg",
         width: 1200,
         height: 630,
-        alt: "InstallPTC - Pay-Per-Install Network",
+        alt: "Adsnes - Performance Advertising Network",
       },
     ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "InstallPTC - Monetize Downloads & Earn",
-    description: "Join thousands of publishers earning with our PPI network",
-    images: ["/twitter-image.png"],
+    title: "Adsnes - Monetize Traffic & Earn",
+    description:
+      "Join thousands of publishers and advertisers growing with Adsnes",
+    images: ["/logo.jpeg"],
   },
 
-  applicationName: "InstallPTC",
+  applicationName: "Adsnes",
   category: "Advertising Technology",
-  publisher: "InstallPTC Network",
-
-  verification: {
-    google: "your-google-verification-code",
-    yandex: "your-yandex-verification-code",
-    yahoo: "your-yahoo-verification-code",
-  },
+  publisher: "Adsnes Network",
 
   alternates: {
-    canonical: "https://installptc.com",
+    canonical: "https://adsnes.com",
   },
 
   appleWebApp: {
     capable: true,
-    title: "InstallPTC",
+    title: "Adsnes",
     statusBarStyle: "black-translucent",
   },
 
@@ -110,26 +103,26 @@ export default function RootLayout({
         <meta name="theme-color" content="#014d4e" />
         <meta name="msapplication-TileColor" content="#014d4e" />
 
-        {/* Structured Data for InstallPTC */}
+        {/* Structured Data for Adsnes */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              name: "InstallPTC",
+              name: "Adsnes",
               description:
-                "Premium Pay-Per-Install Network connecting advertisers and publishers",
-              url: "https://installptc.com",
-              logo: "https://installptc.com/logo.png",
+                "Premium Performance Advertising Network connecting advertisers and publishers",
+              url: "https://adsnes.com",
+              logo: "https://adsnes.com/logo.jpeg",
               sameAs: [
-                "https://twitter.com/installptc",
-                "https://facebook.com/installptc",
-                "https://linkedin.com/company/installptc",
+                "https://www.facebook.com/adsnes/",
+                "https://discord.gg/R9U9eJYdbr",
+                "https://t.me/adsnes_support",
               ],
               contactPoint: {
                 "@type": "ContactPoint",
-                email: "support@installptc.com",
+                email: "support@adsnes.com",
                 contactType: "customer service",
               },
             }),
@@ -142,11 +135,11 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "WebSite",
-              name: "InstallPTC",
-              url: "https://installptc.com",
+              name: "Adsnes",
+              url: "https://adsnes.com",
               potentialAction: {
                 "@type": "SearchAction",
-                target: "https://installptc.com/search?q={search_term_string}",
+                target: "https://adsnes.com/search?q={search_term_string}",
                 "query-input": "required name=search_term_string",
               },
             }),

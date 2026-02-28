@@ -6,6 +6,7 @@ export interface BenefitDataType {
   title: string;
   features: string[];
   buttonText: string;
+  buttonLink: string;
 }
 
 export interface ServiceDataType {
@@ -38,8 +39,11 @@ export interface NavDataType {
 
 export interface HowItWorksDataType {
   step: string;
-  title: string;
   description: string;
+  buttonText?: string;
+  buttonLink?: string;
+  type: "advertiser" | "publisher";
+  isLast?: boolean;
 }
 
 export interface StatDataType {

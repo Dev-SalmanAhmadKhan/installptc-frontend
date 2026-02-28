@@ -57,8 +57,8 @@ export default function ContactSection() {
                 Direct Support
               </span>
               <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight text-[#014d4e]">
-                Ready to <br />
-                <span className="text-gradient-primary">Join Force?</span>
+                Ready to
+                <span className="text-gradient-primary"> Join Force?</span>
               </h2>
               <p className="text-[#3b8a7f] text-lg max-w-md leading-relaxed">
                 Connect with our account managers for custom rates and exclusive
