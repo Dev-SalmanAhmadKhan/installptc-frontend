@@ -1,5 +1,5 @@
 export const ROUTES = {
-  DASHBOARD: "https://adsnes.com",
+  DASHBOARD: "https://dashboard.adsnes.com",
 
   HOME: "/",
   ABOUT: "/about",
