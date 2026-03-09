@@ -152,7 +152,10 @@ export default function ContactSection() {
 
 function ContactInfoCard({ info, index }: { info: any; index: number }) {
   const Icon = info.icon;
-  return (
+  const isExternal =
+    info.href?.startsWith("http") || info.href?.startsWith("https");
+
+  const CardContent = (
     <div
       className="card-animate flex items-center gap-5 p-4 rounded-3xl bg-white/50 border border-[#66b2b2]/10 hover:bg-white hover:border-[#008888]/30 hover:shadow-lg transition-all duration-300 group cursor-pointer"
       style={{ transitionDelay: `${0.1 * (index + 1)}s` }}
@@ -168,6 +171,22 @@ function ContactInfoCard({ info, index }: { info: any; index: number }) {
       </div>
     </div>
   );
+
+  // Only wrap with anchor if href exists
+  if (info.href) {
+    return (
+      <a
+        href={info.href}
+        target={isExternal ? "_blank" : undefined}
+        rel={isExternal ? "noopener noreferrer" : undefined}
+        className="block no-underline"
+      >
+        {CardContent}
+      </a>
+    );
+  }
+
+  return CardContent;
 }
 
 // Simple Send Icon helper

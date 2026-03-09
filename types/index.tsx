@@ -19,6 +19,7 @@ export interface ContactDataType {
   icon: LucideIcon;
   label: string;
   value: string;
+  href: string;
 }
 
 export interface TestimonialDataType {
